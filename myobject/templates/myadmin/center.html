@@ -1,0 +1,83 @@
+{% extends 'myadmin/base.html'%}
+{% load static from staticfiles %}
+{% block a8 %}
+class='active'
+{% endblock %}
+{% block mainbody %}
+<h1>
+		订单详情
+</h1>
+<h3><span >一共{{ leng }}</span> <span style='color:#F08A82'>未发货{{ wei }}</span> <span style='color:#8CD961'>已发货{{ yi }}</span> <span style='color:#F0C80E'>取消的订单{{ qu }}</span></h3>
+ <table class="table table-bordered table-striped">
+    <thead>
+    	<tr>
+    		<th>订单号</th>
+    		<th>用户名</th>
+    		<th>地址</th>
+    		<th>邮编</th>
+    		<th>电话</th>
+    		<th>时间</th>
+    		<th>金额</th>
+            <th>状态</th>
+    		<th>操作</th>
+    	</tr>
+    </thead>
+    
+   <tbody>
+    	{% for i in lists %}
+    	<tr>
+    		<td>{{ i.id }}</td>
+    		<td>{{ i.linkman }}</td>
+    		<td>{{ i.address }}</td>
+    		<td>{{ i.code }}</td>
+     <!--        <td><img src="/static/goods/s_{{ i.picname }}" alt=""></td> -->
+    		<td>{{ i.phone }}</td>
+    		<td>{{ i.addtime }}</td>
+    		<td>{{ i.total }}</td>
+    		{%  if  i.status == 0 %}
+    			<td>新订单</td>
+    		
+    		{%  elif  i.status == 1 %}
+    			<td>已发货</td>
+            {%  elif i.status == 2 %}
+                <td>退订</td>
+    		{% endif %}
+
+                <td>
+                    <a href="{% url 'myadmin_centersdel' i.id %}" class="view-link">发货</a>
+                    <a href="{% url 'myadmin_centersedit' i.id %}" class="view-link">取消订单</a>
+                    <a href="{% url 'myadmin_xiangqing' i.id %}" class="view-link">订单详情</a>
+                </td>
+   
+
+    	</tr>
+    	{% endfor %}
+    
+    <div class="pagination">
+        <ul>
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+
+   </tbody>
+
+
+   </table>
+{% endblock %}

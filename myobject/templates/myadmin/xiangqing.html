@@ -1,0 +1,43 @@
+{% extends 'myadmin/base.html'%}
+{% load static from staticfiles %}
+{% block mainbody %}
+<h1>
+		订单详情
+</h1>
+<h3><span >一共{{ leng }}</span> <span style='color:#F08A82'>未发货{{ wei }}</span> <span style='color:#8CD961'>已发货{{ yi }}</span> <span style='color:#F0C80E'>取消的订单{{ qu }}</span></h3>
+ <table class="table table-bordered table-striped">
+    <thead>
+    	<tr>
+    		<th>商品号</th>
+    		<th>商品名</th>
+    		<th>出产地</th>
+    		<th>详情</th>
+            <th>总价</th>
+    		<th>点击量</th>
+    		<th>图片</th>
+            <th>时间</th>
+    		<!-- <th>数量</th> -->
+    	</tr>
+    </thead>
+    
+   <tbody>
+    	<tr>
+            <td>{{types.id}}</td>
+            <td>{{types.goods}}</td>
+            <td>{{types.company}}</td>
+            <td>{{types.descr}}</td>
+            <td>{{types.price}}</td>
+    		<td>{{types.clicknum}}</td>
+            <td><img src="/static/goods/s_{{types.picname}}" alt=""></td>
+            <td>{{types.addtime}}</td>
+            <!-- <td>{{list.num}}</td> -->
+
+ 
+
+
+    	</tr>
+   </tbody>
+
+
+   </table>
+{% endblock %}

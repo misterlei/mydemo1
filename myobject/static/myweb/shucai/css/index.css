@@ -1,0 +1,54 @@
+*{
+			margin:0;
+			padding: 0;
+		}
+		li{
+			list-style:none;
+
+		}
+		.zhuce{
+			display: block;
+
+			/*padding: 6px 20px 5px;*/
+			/*min-height: 28px;*/
+			float: right
+ 		}
+ 		.column .zhuce_zi{
+ 			
+
+ 			border:0;
+ 			border-left:1px solid #47B488;
+ 			background: #009B72;
+ 			/*border-right:0px;*/
+ 		}
+ 		.dao{
+ 			background: #FFF;
+
+ 		}
+ 		.dao_hang{
+ 			padding:15px;
+ 			background: #FFF;
+ 		}
+ 		.logoa{
+ 			width:33% ; 
+ 			height: 20%;
+ 		}
+		.lunbo .lunboa{
+			height:50%;
+		}
+
+ 		/*组建*/
+ 		.zhu_j{
+ 			padding: 0px;
+ 			margin:0px;
+ 			width: 100%;
+ 		}
+ 		.imgs{
+ 			width: 100%;
+ 			height: 33%;
+ 		}
+ 		/*neibu*/
+ 		.element.style {
+ 			width:100%;
+ 			height: 50%;
+		}

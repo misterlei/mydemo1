@@ -1,0 +1,72 @@
+{% extends "myadmin/base.html" %}
+{% block a6 %}
+class='active'
+{% endblock %}
+
+{% block mainbody %}                
+    <h4>
+        会员信息管理
+    </h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>类别</th>
+                <th>商品名称</th>
+                <th>生产厂家</th>
+                <th>简介</th>
+                <th>单价</th>
+                <th>图片名</th>
+                <th>图片</th>
+                <th>状态</th>
+                <th>库存量</th>
+                <th>被购买数</th>
+                <th>点击次数</th>
+                <th>添加时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vo in goodslists %}
+            <tr>
+                <td>{{ vo.typeid }}</td>
+                <td>{{ vo.goods }}</td>
+                <td>{{ vo.company }}</td>
+                <td>{{ vo.desrc }}</td>
+                <td>{{ vo.price }}</td>
+                <td>{{ vo.picname }}</td>
+                <td><img src="/static/goods/s_{{ vo.picname }}" width="60"/></td>
+                <td>{{ vo.state }}</td>
+                <td>{{ vo.store }}</td>
+                <td>{{ vo.num }}</td>
+                <td>{{ vo.clicknum }}</td>
+                <td>{{ vo.addtime }}</td>
+                <td>
+                    <a href="{% url 'myadmin_goodsdel' vo.id %}" class="view-link">删除</a>
+                    <a href="{% url 'myadmin_goodsedit' vo.id %}" class="view-link">编辑</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>                
+    <div class="pagination">
+        <ul>
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

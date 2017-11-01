@@ -1,0 +1,37 @@
+{% extends "myadmin/base.html" %}
+
+{% block a1 %}
+class='active'
+{% endblock %}
+{% block mainbody %}                
+    <h2>
+        商城网站后台管理首页
+    </h2>
+    <div class="hero-unit" style="background-image:url(/static/myweb/shucai/img/0.jpg);background-position:center; background-repeat:repeat-x">
+        <h3 style="color:#FFF">
+            欢迎<span style="color:#F08A82">{{request.session.adminuser}}</span>来到oppo后台
+        </h3>
+        <p style="color:#FFF">
+            To get the most out of Akira start with our 3 minute tour.
+        </p>
+        <p>
+            <a href="{% url 'index' %}" class="btn btn-primary btn-large">去前端</a> <a class="btn btn-large">留后台</a>
+        </p>
+    </div>
+    <div class="well summary">
+        <ul>
+            <li>
+                <a href="#"><span class="count" style='color:block'>{{ leng }}</span>一共的订单数</a>
+            </li>
+            <li>
+                <a href="#"><span class="count" style='color:#8CD961'>{{ yi }}</span>已经处理的订单</a>
+            </li>
+            <li>
+                <a href="#"><span class="count" style='color:#F08A82'>{{ wei }}</span>未处理的 </a> 
+            </li>
+            <li class="last">
+                <a href="#"><span class="count" style='color:#F0C80E'>{{ qu }}</span> 已经处理的 </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

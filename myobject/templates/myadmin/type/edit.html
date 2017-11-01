@@ -1,0 +1,40 @@
+{% extends "myadmin/base.html" %}
+
+{% block mainbody %}                
+    <h3>
+        会员信息管理
+    </h3>
+    <form id="edit-profile" action="{% url 'myadmin_typeupdate' type.id %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>编辑会员信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">账号：</label>
+                <div class="controls">
+                    {{ type.id }}
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">名字：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01" value="{{ type.name }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">pid：</label>
+                <div class="controls">
+                    <input type="text" name="pid" class="input-xlarge" id="input01" value="{{ type.pid }}" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">path：</label>
+                <div class="controls">
+                    <input type="text" name="path" class="input-xlarge" id="input01" value="{{ type.path }}" />
+                </div>
+            </div>   
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

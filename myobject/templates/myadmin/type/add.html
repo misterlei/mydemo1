@@ -1,0 +1,37 @@
+{% extends "myadmin/base.html" %}
+{% block a5 %}
+class='active'
+{% endblock %}
+
+{% block mainbody %}                
+    <h3>
+        会员信息管理
+    </h3>
+    <form id="edit-profile" action="{% url 'myadmin_typeinsert' %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>添加会员信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">名字：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01" value="" />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">父id：</label>
+                <div class="controls">
+                    <input type="text" name="pid" class="input-xlarge" id="input01" value='0' disabled="disabled"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">path：</label>
+                <div class="controls">
+                    <input type="text" name="path" class="input-xlarge" id="input01" value='0,' disabled="disabled"/>
+                </div>
+            </div>         
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

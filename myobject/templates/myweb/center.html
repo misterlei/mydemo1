@@ -1,0 +1,63 @@
+{% extends "myweb/base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block indexbody %}
+
+
+	<center>                
+    	<h2>
+       		会员订单中心
+    	</h2>
+    	
+            <span style="color:red">{{ request.session.vipname }}</span>
+        	<h2>{{ request.session.vipuser.name }}</h2>
+    	
+    </center>
+    <table class="table table-bordered table-striped">
+    <thead>
+    	<tr>
+    		<th>订单号</th>
+    		<th>用户名</th>
+    		<th>地址</th>
+    		<th>邮编</th>
+    		<th>电话</th>
+    		<th>时间</th>
+    		<th>金额</th>
+    		<th>状态</th>
+            <th>设置</th>
+    	</tr>
+    </thead>
+    
+   <tbody>
+    	{% for i in lists %}
+    	<tr>
+    		<td>{{ i.id }}</td>
+    		<td>{{ i.linkman }}</td>
+    		<td>{{ i.address }}</td>
+    		<td>{{ i.code }}</td>
+    		<td>{{ i.phone }}</td>
+    		<td>{{ i.addtime }}</td>
+    		<td>{{ i.total }}</td>
+    		{%  if  i.status == 0 %}
+    			<td>新订单</td>
+    		
+    		{%  elif  i.status == 1 %}
+    			<td>已购</td>
+            {%  elif i.status == 2 %}
+                <td>退订</td>
+    		{% endif %}
+            <td>
+                    <a href="{% url 'orderstui' i.id %}" class="view-link">取消订单</a>
+                    <a href="{% url 'ordersxiang' i.id %}" class="view-link">订单详情</a>
+
+            </td>
+
+    	</tr>
+    	{% endfor %}
+   </tbody>
+   </table>
+    	
+{% endblock %}

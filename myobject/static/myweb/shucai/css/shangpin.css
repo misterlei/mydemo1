@@ -1,0 +1,63 @@
+*{
+			margin:0;
+			padding: 0;
+		}
+		li{
+			list-style:none;
+
+		}
+		.zhuce{
+			display: block;
+
+			/*padding: 6px 20px 5px;*/
+			/*min-height: 28px;*/
+			float: right
+ 		}
+ 		.column .zhuce_zi{
+ 			
+
+ 			border:0;
+ 			border-left:1px solid #47B488;
+ 			background: #009B72;
+ 			/*border-right:0px;*/
+ 		}
+ 		.dao{
+ 			background: #FFF;
+
+ 		}
+ 		.dao_hang{
+ 			padding:15px;
+ 			background: #FFF;
+ 		}
+ 		/*导航购物车*/
+ 		.navbar .daohang_gou{
+ 			padding: 0px;
+ 		}
+ 		.logoa{
+ 			width:33% ; 
+ 			height: 20%;
+ 			 		}
+ 		.container-fluid .gouwu_kuang{
+ 			padding: 0;
+ 		}
+ 		/*巨幕*/
+
+ 		.jumu img{
+ 			padding: 0px;
+ 			margin: 0px;
+ 			height: 50%;
+ 			width: 100%;
+ 			
+ 		}
+ 		/*商品*/
+ 		.shangpin h5,p{
+ 			text-align: center;
+ 		}
+ 		.shangpin .baopintu{
+ 			float: right;
+ 		}
+
+ 		/*承诺区七天*/
+ 		.qitian img{
+ 			width:100%;
+ 		}

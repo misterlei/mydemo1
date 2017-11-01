@@ -1,0 +1,61 @@
+{% extends 'myadmin/base.html'%}
+{% block body %}
+<h1>
+		Activity
+</h1>
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>
+				Project
+			</th>
+			<th>
+				Client
+			</th>
+			<th>
+				Type
+			</th>
+			<th>
+				Date
+			</th>
+			<th>
+				View
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for i in type%}
+			<td>{{i.id}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.pid}}</td>
+			<td>{{i.path}}</td>
+			<td>
+				<a href="{% url 'myadmin_type' i.id %}">删除</a>
+				<!-- <a href="{% url 'myadmin_type' i.id %}">编辑</a> -->
+			</td>
+		{% endfor %}
+	</tbody>
+</table>				
+<div class="pagination">
+	<ul>
+		<li class="disabled">
+			<a href="#">&laquo;</a>
+		</li>
+		<li class="active">
+			<a href="#">1</a>
+		</li>
+		<li>
+			<a href="#">2</a>
+		</li>
+		<li>
+			<a href="#">3</a>
+		</li>
+		<li>
+			<a href="#">4</a>
+		</li>
+		<li>
+			<a href="#">&raquo;</a>
+		</li>
+	</ul>
+</div>
+{% endblock %}

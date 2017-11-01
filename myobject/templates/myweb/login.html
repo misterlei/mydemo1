@@ -1,0 +1,123 @@
+{% extends "myweb/base.html" %}
+{% load static from staticfiles %} 
+
+		<!-- 登录注册行结束 -->
+		<!-- 导航页结束 -->
+		<br>
+{% block indexbody %}
+		<!-- 注册 -->
+		<div class="container">
+			<div class="row clearfix">
+				<div class="col-md-4 column col-md-offset-4 col-sm-4 col-sm-offset-4 col-xs-10 col-xs-offset-1">
+
+					<!-- logo -->
+					<div><img src="{% static 'myweb/shucai/img/zclg.jpg' %}" alt="" style="width:100%"></div>
+					<div class="col-md-10 col-md-offset-2">登录OPPO帐号可享受更多的服务</div>
+					<div>&nbsp</div>
+					<!-- <form role="form" class="zcl"> -->
+					<form id="login-form" method="post" class="form-horizontal" class="zcl well" action="{% url 'dologin' %}"  >
+            			{% csrf_token %}
+						<div class="form-group">
+							 <label for="exampleInputEmail1" ></label><input type="text" name="username" class="form-control youxianga" id="exampleInputEmail1" placeholder="请输入手机号/邮箱/用户名"  />
+						</div>
+						<span style="color:red">{{ info }}</span>
+						<div class="form-group">
+							 <label for=""></label><input type="password"  name="password" class="form-control mimaa" id="exampleInputPassword1" placeholder="请输入帐号密码"  />
+						</div>
+							验证码：<input type="text" name="codeqian" class="span2" style="width:120px;"  placeholder="字母小写" />
+            						<img src="{% url 'myadmin_verify' %}" onclick="this.src='{% url 'myadmin_verify' %}?sn='+Math.random()"/>
+            			<br>
+            			<br>
+            			<br>
+			
+						<div class="form-group col-md-4 col-md-offset-8">
+							 <label for="exampleInputFile"; ><a href="http://www.baidu.com"  style="font-size:12px;">登陆遇到问题</a></label>
+							<!-- <p class="help-block">
+								Example block-level help text here.
+							</p> -->
+						</div>
+						<!-- <div>
+							<input type="file" id="exampleInputFile" />
+						</div> -->
+						<!-- <div class="checkbox">
+							 <label><input type="checkbox" />Check me out</label>
+						</div> <button type="submit" class="btn btn-default">Submit</button> -->
+						<!-- 登录按钮 -->
+						
+						<!-- <div class="col-md-12 " style="padding:0px;"> -->
+						
+						<!-- <div>&nbsp</div> -->
+						<a href="" style="color:#FFF";><button href="" style="background:#2AAD6F;  width:100%; font-size:20px; padding:5px;margin:0px;">登录</button></a>
+							<!-- <a href="" style="color:black"><button style="background:#FFF; width:100%; font-size:20px; padding:5px;margin:0px;" >注册oppo帐号</button></a> -->
+						</div>
+						<div>&nbsp</div>
+						<div>&nbsp</div>
+						<div>&nbsp</div>
+
+						<br>
+						<br>
+						<br>
+						<div class="row col-md-6 col-md-offset-4">
+								
+								<div style="color:#999">-----------~~~~~~~~其他方式登录~~~~~~~~-------------</div>
+						</div>
+						<div class="col-md-6 col-md-offset-4">
+							<img src="{% static 'myweb/shucai/img/dlfs.png' %}" alt="">
+						</div>
+						<div class="row col-md-12  col-md-offset-0">
+							 <a id="modal-987409" href="#modal-container-987409" role="button" class="btn" data-toggle="modal">心情不好来一发吧</a>
+							
+							<div class="modal fade" id="modal-container-987409" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+											<h4 class="modal-title" id="myModalLabel">
+												这是一个小动漫<img src="{% static 'myweb/shucai/img/tz.jpg' %}" alt="" style="width:20%">音乐拍照手机照亮你的自信
+											</h4>
+										</div>
+										<div class="modal-body col-md-12">
+											 	<div class="col-sm-6 col-lg-3 col-lg-offset-0">
+														<video type="video/mp4" src="{% static 'myweb/shucai/move/bb.mp4' %}"  loop="loop" style="width:400% ; padding:0;"  controls></video>
+												</div>
+											<div class="modal-footer col-md-12" style="background:#FFF">
+											 	<a href="zuce.html"><button type="button" class="btn btn-default" data-dismiss="modal" style="background:green">返回</button></a> <a href="{% url 'index' %}"><button type="button" class="btn btn-primary">首页</button></a>
+											</div>
+										</div>
+									
+								
+									
+									</div>	
+											
+								</div>
+							
+							</div>
+						</div>	
+					</form>		
+				
+			</div>
+		</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div>&nbsp</div>
+		<div class="col-md-8 col-md-offset-4">
+			<p style="color:#7B7B7B">© 2005 - 2017 东莞市永盛通信科技有限公司 版权所有 粤ICP备08130115号-1</p>
+		</div>
+	</div>
+	<script type="text/javascript" src="{% static 'myweb/shucai/js/jquery-1.8.3.min.js' %}"></script>
+	<script type="text/javascript">
+	// alert($)
+	// $('.youxianga').blur(function(){
+	// 	var a= $(this).val();
+	// 	var z=/^\w{6,13}$/;
+	// 	alert(z)
+	// 	alert(z.test(a))
+	// 	if(z.test(a)){
+	// 		$(this).next('span').html('✔').css('border','red');
+	// 	}
+	// 	else{
+	// 		alert(00)
+	// 	}
+	// })
+	</script>
+{% endblock %}

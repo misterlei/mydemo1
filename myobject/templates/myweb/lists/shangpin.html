@@ -1,0 +1,211 @@
+
+{% extends 'myweb/base.html' %}
+{% load static from staticfiles %}
+{% block shangpincss %}
+<link rel="stylesheet" href="{% static 'myweb/shucai/css/shangpin.css' %}">
+{% endblock%}
+
+
+{% block indexbody%}
+<div class="container-fluid">
+	<!-- 登录注册行 -->
+	<!-- 登录注册行结束 -->
+	<br>
+	<!-- 导航页 -->
+	<!-- 导航页结束 -->
+	<br>
+	<!-- 测试测试测试 -->
+	<div class="gen"  style="position:fixed; top:130px; left:0;">
+		<ul class="nav nav-tabs">
+		  <li role="presentation" class="active"><a href="{% url 'lists' 18 %}">数码</a></li>
+		  <li role="presentation"><a href="{% url 'lists' 17 %}">服装</a></li>
+		  <li role="presentation"><a href="{% url 'lists' 31 %}">食品</a></li>
+		</ul>
+		
+		<ul class="nav nav-tabs">
+		{% for i in types %}
+		  <li role="presentation" class="active"><a href="{% url 'lists' 18 %}">{{i.name}}</a></li>
+	 	{% endfor %}
+	 	</ul>
+	</div>
+	<!-- <div class='daohang'>
+		{% for i in types %}
+		<button style="padding:15px;" ><a href="{% url 'lists'  i.id %}" >{{ i.name }}</a></button>
+		{% endfor%}
+		<button style="padding:15px;" ><a href="{% url 'lists'  0 %}" >返回</a></button> -->
+
+
+
+
+
+
+	</div>
+	<!-- 巨幕 -->
+	<div class="row  jumu  ">
+		<img src="{% static 'myweb/shucai/img/fd.jpg' %}">
+	</div>
+	<!-- 商品 -->
+	
+	<div class="row">
+	<form  method="post">
+	{% for ob in goodslist %}
+	<form  method="post">
+	{% csrf_token %}
+		<div class="col-sm-6 col-md-3 shangpin baopintu">
+				    <div class="thumbnail ">
+				    	<div class="baopintu"><img src="{% static 'myweb/shucai/img/baopintu.png' %}"></div>
+
+				        <a href="{% url 'detail' ob.id %}"><img src="/static/goods/{{ ob.picname }}" alt="..." ></a>
+				      	<div class="caption">
+				        <h5>{{ob.goods}}</h5>
+				        <p>{{ob.price}}</p>
+				        <p>{{ob.descr}}</p>
+				        <p>热度{{ob.clicknum}}</p>
+				        <p>
+				        	<a href="{% url 'detail'  ob.id %}" class="btn btn-primary" role="button">购买</a> 
+				        	<!-- <a href="#" class="btn btn-default" role="button">加入购物车</a> -->
+				        	<button class='dianji btn btn-default'>加入购物车</button>
+				        </p>
+				      </div>
+				    </div>
+		</div>
+		</form>
+		{% endfor %}
+	</form>
+
+	
+
+	<!-- 七天退款去公司承诺区 -->
+	<div class="row qiantian hidden-xs hidden-sm col-lg-offset-1">
+		<!-- <div class="col-xs-12 col-sx-12 col-lg-10 col-lg-offset-1"> -->
+			<!-- <source media="(min-width: 990px)" srcset="./shucai/img/services.png"> -->
+			<!-- <source media="(min-width: 750px)" srcset="./shucai/img/qitian.png"> -->
+			<!-- <source media="(min-width: 300px)" srcset="./shucai/img/qitian.png"> -->
+			<img src="{% static 'myweb/shucai/img/services.png' %}" setsrc="{% static 'myweb/shucai/img/qitian.png' %}"  >
+			
+		<!-- </div> -->
+	</div>
+	<div class="row hidden-md hidden-lg col-xs-12 col-sm-12" style="width:100%">
+		<img src="{% static 'myweb/shucai/img/qitian.png' %}" style="width:100%" >
+	</div>
+	<!-- 测试客服 -->
+	<!-- 底部 -->
+	<div class="row">
+		<footer class="footer ">
+			    <div class="container">
+			      <div class="row footer-top">
+			        <div class="col-sm-6  col-lg-5 col-lg-offset-1">
+			          <div class="row about" >
+			            <div class="col-xs-3">
+			              <h4>推荐机型</h4>
+			              <ul class="list-unstyled" >
+			                <li><a href="/about/" style="color:#000">R11</a></li>
+			                <li><a href="/ad/" style="color:#000">R11Plus</a></li>
+			                <li><a href="/links/" style="color:#000">A57</a></li>
+			                <li><a href="/hr/" style="color:#000">A59s</a></li>
+			              </ul>
+			            </div>
+			            <div class="col-xs-3">
+			              <h4>服务</h4>
+			              <ul class="list-unstyled">
+			                <li><a href="http://weibo.com/bootcss" title="Bootstrap中文网官方微博" target="_blank" style="color:#000">服务网点查询</a></li>
+			                <li><a href="mailto:admin@bootcss.com" style="color:#000">零配件价格查询</a></li>
+			                <li><a href="mailto:admin@bootcss.com" style="color:#000">官方授权网店</a></li>
+			              </ul>
+			            </div>
+			            <div class="col-xs-3">
+			              <h4>关于我们</h4>
+			              <ul class="list-unstyled">
+			                <li><a href="http://www.golaravel.com/" target="_blank" style="color:#000">关于OPPO</a></li>
+			                <li><a href="http://www.ghostchina.com/" target="_blank" style="color:#000">加入我们</a></li>
+			              </ul>
+			            </div>
+			            <div class="col-xs-3">
+			              <h4>商务合作</h4>
+			              <ul class="list-unstyled">
+			                <li><a href="https://www.upyun.com" target="_blank" style="color:#000">开放平台</a></li>
+			                <li><a href="https://www.upyun.com" target="_blank" style="color:#000">采购相关</a></li>
+			              </ul>
+			            </div>
+			          </div>
+			  
+			        </div>
+			        <div class="col-sm-6 col-lg-4 col-lg-offset-2">
+			          <h4>
+			          	<a id="modal-987409"  href="#modal-container-987409" role="button" class="btn" data-toggle="modal"><img style="text-align: center;" src="{% static 'myweb/shucai/img/icon-online.png' %}"></a>
+			          	<div class="modal fade" id="modal-container-987409" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			       			<video type="video/mp4" src="{% static 'myweb/shucai/move/aa.mp' %}" autoplay="autoplay" loop="loop" style="height:50%" controls></video>
+			          	</div>
+			            
+			          </h4>
+			          <h2><p   style="text-align: left;">4001-666-888</p></h2>
+			        </div>
+			      </div>
+			      <hr>
+			      <div class="row footer-bottom col-sm-6 col-lg-6 ">
+			        <ul class="list-inline text-center">
+			          <li><a href="http://www.miibeian.gov.cn/" target="_blank"></a></li><li>© 2005 - 2017 OPPO 版权所有 粤ICP备08130115号-1 联系方式：4001-666-888</li>
+			        </ul>
+			      </div>
+			      <div class="row col-sm-6 col-lg-4 col-lg-offset-2 " >
+			      	<li>
+			      		<a href=""></a><span>关注我们:</span>
+			      		<img src="{% static 'myweb/shucai/img/wx1.png' %}">
+			      	</li>
+			      </div>
+			    </div>
+		</footer>
+	</div>
+
+	<!--测试测试测试  -->
+	<!-- <nav class="navbar-fixed-top"> -->
+	<!-- <img src="./shucai/img/xinpin.png"> -->
+
+	<!-- 测试框 -->
+		<!-- <div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 col-md-offset-11 column hidden-xs hidden-sm" style="top:200px;">
+					<div class="btn-group">
+						<a href="zuce.html"><img src="{% static 'myweb/shucai/img/kefu.png' %}" alt=""></a> -->
+						 <!-- <button class="btn btn-default">Action</button> <button data-toggle="dropdown" class="btn btn-default dropdown-toggle"><span class="caret"></span></button> -->
+	<!-- 					
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<nav class="navbar-fixed-top"> -->
+	<!-- <img src="./shucai/img/xinpin.png"> -->
+
+	<!-- 测试框 -->
+		<!-- <div class="container">
+			<div class="row clearfix">
+				<div class="col-md-12 col-md-offset-11 column hidden-xs hidden-sm" style="top:600px;">
+					<div class="btn-group"> -->
+						<!-- <a href="#"><img src="./shucai/img/kefu.png" alt=""></a> -->
+						<!-- <button class="btn btn-default dingb">返回顶部</button>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav> -->
+	<script type="text/javascript" src="myadmin/js/jquery.min.js"></script>
+	<script type="text/javascript">
+		// $('.dingb').len
+		$('.dingb').click(function(){
+			$('body').animate({scrollTop:0+'px'},500);
+		})
+		$('.dianji').click(function(){
+			alert('直接买去，别点我')
+		})
+		$(window).scroll(function(){
+			$(document).scrollTop()=500px;
+		});
+
+		
+
+	</script>
+	
+</div>
+{% endblock%}

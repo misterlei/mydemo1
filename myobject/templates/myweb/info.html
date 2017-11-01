@@ -1,0 +1,58 @@
+{% extends "myweb/base.html" %}
+
+{% load static from staticfiles %}
+
+
+
+{% block indexbody %}
+
+
+	<center>                
+    	<h2>
+       		操作信息提示
+    	</h2>
+    	<h4 >
+        	<span style="color:red">{{ info }}订单号为{{ hao }}</span>
+    	</h4>
+    </center>
+    <h3>订单详情</h3>
+    <table class="table table-bordered table-striped">
+    <thead>
+    	<tr>
+    		<th>订单号</th>
+    		<th>用户名</th>
+    		<th>地址</th>
+    		<th>邮编</th>
+    		<th>电话</th>
+    		<th>时间</th>
+    		<th>金额</th>
+    		<th>状态</th>
+    	</tr>
+    </thead>
+    
+   <tbody>
+    	{% for i in lists %}
+    	<tr>
+    		<td>{{ i.id }}</td>
+    		<td>{{ i.linkman }}</td>
+    		<td>{{ i.address }}</td>
+    		<td>{{ i.code }}</td>
+    		<td>{{ i.phone }}</td>
+    		<td>{{ i.addtime }}</td>
+    		<td>{{ i.total }}</td>
+    		{%  if  i.status == 0 %}
+    			<td>新订单</td>
+    		
+    		{%  elif  i.status == 1 %}
+    			<td>已发货</td>
+
+            {%  elif  i.status == 2 %}
+                <td>已退</td>
+            {% endif %}
+
+    	</tr>
+    	{% endfor %}
+   </tbody>
+   </table>
+    	
+{% endblock %}

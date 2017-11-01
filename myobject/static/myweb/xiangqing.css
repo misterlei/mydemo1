@@ -1,0 +1,111 @@
+	*{
+			margin:0;
+			padding: 0;
+		}
+		li{
+			list-style:none;
+
+		}
+		.zhuce{
+			display: block;
+
+			/*padding: 6px 20px 5px;*/
+			/*min-height: 28px;*/
+			float: right
+ 		}
+ 		.column .zhuce_zi{
+ 			
+
+ 			border:0;
+ 			border-left:1px solid #47B488;
+ 			background: #009B72;
+ 			/*border-right:0px;*/
+ 		}
+ 		.dao{
+ 			background: #FFF;
+
+ 		}
+ 		.dao_hang{
+ 			padding:15px;
+ 			background: #FFF;
+ 		}
+ 		/*导航购物车*/
+ 		.navbar .daohang_gou{
+ 			padding: 0px;
+ 		}
+ 		.logoa{
+ 			width:33% ; 
+ 			height: 20%;
+ 			 		}
+ 		.container-fluid .gouwu_kuang{
+ 			padding: 0;
+ 		}
+ 		/*左边*/
+ 		.fang .tuxiafu img{
+ 			margin:20px;
+ 			width:150%;
+ 		}
+ 		.tuxia{
+ 			float: left;
+ 			border-radius:50%;
+ 			border:1px solid #e2e2e2;
+ 		}
+ 		/*右边*/
+ 		.liangqianwan{
+ 			color:#878795;
+ 		}
+ 		.jieshao{
+ 			font-size:16px;
+ 		}
+		.daxiao img{
+			width:120%;
+			margin:0px;
+			padding: 0px;
+		}
+		.fang .colors{
+			color:red;
+		}
+		.xuanxiangtou{
+			text-align: center;
+			font-size:14px;
+		}
+		.zp{
+			border:1px solid #E2E2E2;
+			width:38px;
+		}
+		.xuanxiang{
+			margin:5px;
+			border:1px solid #E2E2E2;
+			/*border:1px solid #2AAD6F;*/
+			color:#878795;
+			text-align: center;	
+			font-size:16px;
+		}
+		.fuwu span {
+			border:1px solid #e2e2e2;
+			font-size:16px;
+			padding: 5px;
+			margin:5px;
+		}
+		.fuwu .span1{
+			color:#E9AF4A;
+			border-left:0;
+			/*margin:5px;*/
+			/*margin:2px;*/
+			/*padding: 5px;*/
+		}
+		.fuwuzhong .bao{
+			text-decoration: none;
+		}
+		.fuwuzhong .spanj{
+			color:#50BB88;
+		}
+		.shuru{
+			width:120px;
+		}
+		/*导航下的*/
+		.yitu {
+			padding:0;
+			margin:0;
+
+		}

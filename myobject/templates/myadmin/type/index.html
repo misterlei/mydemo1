@@ -1,0 +1,57 @@
+{% extends "myadmin/base.html" %}
+{% block a4 %}
+class='active'
+{% endblock %}
+
+{% block mainbody %}                
+    <h4>
+        商品类别管理
+    </h4>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>id号</th>
+                <th>名字</th>
+                <th>父级类别</th>
+                <th>路径</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vo in typelist %}
+            <tr>
+                <td>{{ vo.id }}</td>
+                <td>{{ vo.pname }} {{ vo.name }}</td>
+                <td>{{ vo.pid }}</td>
+                <td>{{ vo.path }}</td>
+                <td>
+                    <a href="{% url 'myadmin_typeadds'  vo.id %}" class="view-link">添加子类</a>
+                    <a href="{% url 'myadmin_typedel'  vo.id %}" class="view-link">删除</a>
+                    <a href="{% url 'myadmin_typeedit'  vo.id %}" class="view-link">编辑</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>                
+    <div class="pagination">
+        <ul>
+            <li class="disabled">
+                <a href="#">&laquo;</a>
+            </li>
+            <li class="active">
+                <a href="#">1</a>
+            </li>
+            <li>
+                <a href="#">2</a>
+            </li>
+            <li>
+                <a href="#">3</a>
+            </li>
+            <li>
+                <a href="#">4</a>
+            </li>
+            <li>
+                <a href="#">&raquo;</a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
